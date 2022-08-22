@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Site</title>
+  
+  <style>
+
+div {
+    width: 100%;
+    height: 50px;
+    
+    font-size: 15px;
+
+    border-bottom: 0.5px black solid;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: 55%;
+}
+
+a {
+    color: yellowgreen;
+    text-decoration: none;
+}
+
+a:hover {
+    color: royalblue;
+}
+
+  </style>
+
+ </head>
+ <body>
+    <header>
+        <div>
+            <li>
+                <ul><a href="/">Главная</a></ul>
+                <ul><a href="/info">Информация</a></ul>
+                <ul><a href="/articles">Статьи</a></ul>
+                <ul><a href="/registration">Регистрация</a></ul>
+                <ul><a href="/login">Вход</a></ul>
+            </li>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div style="border-top: 0.5px black solid; border-bottom: none">
+            <h3>For more info check my <a href="https://vk.com">page</a></h3>
+        </div>
+    </footer>
+ </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>Registration</h2>
+    <form name="registrate" method="post" action="/registration">
+        <p>Login:</p>
+        <input type="text" size="40" maxlength="15" required name="login">
+        <p>Password:</p>
+        <input type="text" size="40" maxlength="20" required name="password">
+        <p>Repeat password:</p>
+        <input type="text" size="40" maxlength="20" required name="repeat_password">
+
+        <p><input type="submit" value="Accept"></p>
+    </form>
+{% endblock %}
