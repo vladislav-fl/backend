@@ -1,5 +1,14 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Articles</h2>
+    <h2>{{ lang['-articles-']['articles'] }}</h2>
+    <p><a href="articles/create">{{ lang['-articles-']['create-article'] }}</a></p>
+    {% for article in articles %}
+        <div class="articles_div">
+            <h3><a href="articles/{{ article[0] }}">{{ article[2] }}</a></h3>
+            <p style="width: 100%;">{{ article[3] }}</p>
+            <h6>{{ lang['-articles-']['article-liked'] }}: {{ article[5] }} | {{ lang['-articles-']['article-disliked'] }}: {{ article[6] }}</h6>
+            <h6>{{ lang['-articles-']['article-user-id'] }}: {{ article[1] }} | {{ lang['-articles-']['article-date'] }}: {{ article[4] }}</h6>
+        </div>
+    {% endfor %}
 {% endblock %}

@@ -1,5 +1,28 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Information</h2>
+    <h2>{{ lang['-cabinet-']['cabinet'] }}</h2>
+    <form name="change_background_color" method="get" action="/info/change_background_color">
+        <p>{{ lang['-cabinet-']['background-color'] }}:</p>
+        <input type="radio" id="white" name="background_color" value="white" required>
+        <label for="white">{{ lang['-cabinet-']['background-color-white'] }}</label>
+
+        <input type="radio" id="black" name="background_color" value="black" required>
+        <label for="black">{{ lang['-cabinet-']['background-color-black'] }}</label>
+
+        <input type="radio" id="yellow" name="background_color" value="yellow" required>
+        <label for="yellow">{{ lang['-cabinet-']['background-color-yellow'] }}</label>
+        
+        <p><input class="button" type="submit" value="{{ lang['-cabinet-']['background-color-accept'] }}"></p>
+    </form>
+    <hr>
+    <form name="change_language" method="get" action="/info/change_language">
+        <p>{{ lang['-cabinet-']['language'] }}:</p>
+        <input type="radio" id="ru" name="language" value="ru" required>
+        <label for="ru">Русский</label>
+
+        <input type="radio" id="en" name="language" value="en" required>
+        <label for="en">English</label>
+        
+        <p><input class="button" type="submit" value="{{ lang['-cabinet-']['language-accept'] }}"></p>
 {% endblock %}

@@ -1,0 +1,168 @@
+{% extends 'admin.index.html' %}
+
+{% block content %}
+
+    <form name="admin_logout" method="post" action="/admin/settings">
+        <p><input type="submit" value="Выйти"></p>
+    </form>
+
+    <h1>Уровень доступа: {{ permission }}</h1>
+    <h1>Рабочая панель:</h1>
+    {% if permission == 'ограниченный' %}
+
+        <h3>Чат:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Удаление сообщения:</label>
+            <br>
+            <input id="delete" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID сообщения" required>
+            <br>
+            <input class="button" type="submit" value="Удалить">
+        </form>
+        <hr>
+
+        <h3>Рассылка:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения пользователю:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <input id="send_message" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID пользователя" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения всем:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+    {% elif permission == 'доверенный' %}
+        <h3>Чат:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Удаление сообщения:</label>
+            <br>
+            <input id="delete" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID сообщения" required>
+            <br>
+            <input class="button" type="submit" value="Удалить">
+        </form>
+        <hr>
+
+        <h3>Рассылка:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения пользователю:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <input id="send_message" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID пользователя" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения всем:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <hr>
+
+        <h3>Статьи:</h3>
+        <form name="create_article" method="post" action="/articles/create">
+            <label for="article">Создание статьи:</label>
+            <br>
+            <input placeholder="Оглавление" type="text" id="article" size="40" maxlength="40" required name="intro">
+            <br>
+            <textarea placeholder="Текст статьи" required name="text" maxlength="1000" cols="200" rows="5" wrap="hard"></textarea>
+            <br>
+            <input class="button" type="submit" value="Создать">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Удаление статьи:</label>
+            <br>
+            <input id="delete" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID статьи" required>
+            <br>
+            <input class="button" type="submit" value="Удалить">
+        </form>
+
+    {% elif permission == 'полный' %}
+        <h3>Чат:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Удаление сообщения:</label>
+            <br>
+            <input id="delete" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID сообщения" required>
+            <br>
+            <input class="button" type="submit" value="Удалить">
+        </form>
+        <hr>
+
+        <h3>Рассылка:</h3>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения пользователю:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <input id="send_message" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID пользователя" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Отправка сообщения всем:</label>
+            <br>
+            <input id="send" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="Сообщение" required>
+            <br>
+            <input class="button" type="submit" value="Отправить">
+        </form>
+        <hr>
+
+        <h3>Статьи:</h3>
+        <form name="create_article" method="post" action="/articles/create">
+            <label for="article">Создание статьи:</label>
+            <br>
+            <input placeholder="Оглавление" type="text" id="article" size="40" maxlength="40" required name="intro">
+            <br>
+            <textarea placeholder="Текст статьи" required name="text" maxlength="1000" cols="200" rows="5" wrap="hard"></textarea>
+            <br>
+            <input class="button" type="submit" value="Создать">
+        </form>
+        <br>
+        <form name="send_message" method="post" action="/chat">
+            <label for="send">Удаление статьи:</label>
+            <br>
+            <input id="delete" class="text" type="text" name="message" style="width: 200px;" maxlength="400" placeholder="ID статьи" required>
+            <br>
+            <input class="button" type="submit" value="Удалить">
+        </form>
+        <hr>
+
+        <h3>Пользователи:</h3>
+        <h3>Сайт:</h3>
+        <h3>Логи:</h3>
+    {% endif %}
+    
+{% endblock %}

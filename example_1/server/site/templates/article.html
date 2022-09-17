@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% for element in article %}
+        {% if element[1]|string == user_id %}
+            <form name="delete_article" method="get" action="/articles/{{ element[0] }}/delete_article">
+                <p><input class="button" type="submit" value="{{ lang['-article-']['article-delete'] }}"></p>
+            </form>
+        {% endif %}
+        <h2>{{ lang['-article-']['article'] }}</h2>
+        <div class="article_div">
+
+            <h1>{{ element[2] }}</h1>
+
+            <h3 style="text-align: left;">{{ element[3] }}</h3>
+
+            <p>{{ lang['-article-']['article-user-id'] }} {{ element[1] }} {{ lang['-article-']['article-date'] }} {{ element[4] }}</p>
+
+            <p>{{ lang['-article-']['article-liked'] }}: {{ element[5] }} {{ lang['-article-']['article-disliked'] }}: {{ element[6] }}</p>
+
+            {% if article_meta_like == 'None' %}
+            <form name="like" method="get" action="/articles/{{ element[0] }}/like">
+                <input class="button" type="submit" value="{{ lang['-article-']['article-set-like'] }}" style="width: 120px;">
+            </form>
+            <form name="dislike" method="get" action="/articles/{{ element[0] }}/dislike">
+                <input class="button" type="submit" value="{{ lang['-article-']['article-set-dislike'] }}" style="width: 120px;">
+            </form>
+            {% elif article_meta_like == 'like' %}
+                <form name="like" method="get" action="/articles/{{ element[0] }}/delete_like">
+                    <input class="button" type="submit" value="{{ lang['-article-']['article-cancel-like'] }}" style="width: 120px;">
+                </form>
+                <form name="dislike" method="get" action="/articles/{{ element[0] }}/dislike">
+                    <input class="button" type="submit" value="{{ lang['-article-']['article-set-dislike'] }}" disabled style="width: 120px;">
+                </form>
+            {% elif article_meta_like == 'dislike' %}
+                <form name="like" method="get" action="/articles/{{ element[0] }}/like">
+                    <input class="button" type="submit" value="{{ lang['-article-']['article-set-like'] }}" disabled style="width: 120px;">
+                </form>
+                <form name="dislike" method="get" action="/articles/{{ element[0] }}/delete_dislike">
+                    <input class="button" type="submit" value="{{ lang['-article-']['article-cancel-like'] }}" style="width: 120px;">
+                </form>
+            {% endif %}
+            <form name="comment_section" method="post" action="/articles/{{ element[0] }}/leave_comment">
+                <p>{{ lang['-article-']['article-leave-comment'] }}:</p>
+                <textarea required style="width: 100%;" name="text" maxlength="300" cols="50" rows="6" wrap="hard"></textarea>
+                <input class="button" type="submit" value="{{ lang['-article-']['article-leave-comment-accept'] }}">
+            </form>
+            {% if article_meta_comments|length == 0 %}
+                <p>{{ lang['-article-']['article-no-comments'] }}</p>
+            {% else %}
+                {% for comment in article_meta_comments %}
+                    <p>{{ lang['-article-']['article-comment'] }}: <b>{{ comment[2].split(',')[1] }}</b> | {{ lang['-article-']['article-comment-user-id'] }} <b>{{ comment[2].split(',')[0] }}</b>
+                        {% if user_id == comment[2].split(',')[0] %}
+                            <form name="delete_comment" method="get" action="/articles/{{ element[0] }}/delete_comment/{{ comment[2] }}">
+                                <input class="button" type="submit" value="{{ lang['-article-']['article-comment-delete'] }}">
+                            </form>
+                        {% endif %}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

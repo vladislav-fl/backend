@@ -1,13 +1,13 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Login</h2>
+    <h2>{{ lang['-login-']['enter'] }}</h2>
     <form name="registrate" method="post" action="/login">
-        <p>Login:</p>
+        <p>{{ lang['-login-']['login'] }}:</p>
         <input type="text" size="40" maxlength="15" required name="login">
-        <p>Password:</p>
-        <input type="text" size="40" maxlength="20" required name="password">
+        <p>{{ lang['-login-']['password'] }}:</p>
+        <input type="password" size="40" maxlength="20" required name="password">
 
-        <p><input type="submit" value="Accept"></p>
+        <p><input class="button" type="submit" value="{{ lang['-login-']['login-accept'] }}"></p>
     </form>
 {% endblock %}

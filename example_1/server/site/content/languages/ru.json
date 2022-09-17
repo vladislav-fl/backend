@@ -1,0 +1,83 @@
+{
+    "-site-interface-": {
+        "header": {
+            "main": "Главная",
+            "cabinet": "Личный кабинет",
+            "articles": "Статьи",
+            "exit": "Выход",
+            "registration": "Регистрация",
+            "login": "Вход",
+            "chat": "Чат"
+        },
+        "footer": {
+            "link": "За дополнительной информацией перейдите на мою <страницу>"
+        }
+    },
+    "-chat-": {
+        "chat-message": "Напишите здесь сообщение...",
+        "chat-message-send": "Отправить"
+    },
+    "-main-": {
+        "important": "Важное",
+        "new": "Новое",
+        "popular": "Популярное",
+        "recommended": "Рекомендуемое",
+        "not-logged": "Войдите или создайте новый аккаунт, чтобы начать делиться своими и читать статьи других людей",
+        "article-user-id": "ID автора",
+        "article-date": "Дата публикации"
+    },
+    "-cabinet-": {
+        "cabinet": "Личный кабинет",
+        "background-color": "Цвет заднего фона",
+        "background-color-white": "Белый",
+        "background-color-black": "Черный",
+        "background-color-yellow": "Желтый",
+        "background-color-accept": "Изменить",
+        "language": "Язык",
+        "language-accept": "Изменить"
+    },
+    "-articles-": {
+        "articles": "Статьи",
+        "create-article": "Создать статью",
+        "article-liked": "Понравилось",
+        "article-disliked": "Не понравилось",
+        "article-user-id": "ID пользователя",
+        "article-date": "Дата"
+    },
+    "-article-": {
+        "article-delete": "Удалить статью",
+        "article": "Статья",
+        "article-user-id": "Пользователь с ID",
+        "article-date": "опубликовал статью",
+        "article-liked": "Лайки",
+        "article-disliked": "Дизлайки",
+        "article-set-like": "Понравилось",
+        "article-set-dislike": "Не понравилось",
+        "article-cancel-like": "Отменить",
+        "article-leave-comment": "Оставьте комментарий",
+        "article-leave-comment-accept": "Отправить",
+        "article-no-comments": "Никто еще не успел оставить свой комментарий здесь... Вы можете стать первым!",
+        "article-comment": "Комментарий",
+        "article-comment-user-id": "От пользователя с ID",
+        "article-comment-delete": "Удалить"
+    },
+    "-article-create-": {
+        "article-creation": "Создание статьи",
+        "article-intro": "Оглавление",
+        "article-text": "Текст",
+        "article-creation-accept": "Создать"
+    },
+    "-registration-": {
+        "registration": "Регистрация",
+        "login": "Логин",
+        "password": "Пароль",
+        "password-repeat": "Повторите пароль",
+        "registration-accept": "Подтвердить"
+    },
+    "-login-": {
+        "enter": "Вход",
+        "login": "Логин",
+        "password": "Пароль",
+        "login-accept": "Подтвердить"
+    }
+}

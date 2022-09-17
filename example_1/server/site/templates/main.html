@@ -1,5 +1,69 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Main</h2>
+    {% if logged %}
+        {% set i = namespace(i=0) %}
+        <h2>{{lang['-main-']['important']}}:</h2>
+        {% for row in rows_length %}
+            {% if loop.index == 1 %}
+                {% for row_element in range(row) %}
+                    <div class="articles_div" style="height: 200px;">
+                        <h3><a href="articles/{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[0] }}">{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[2].replace("'", '') }}</a></h3>
+                        <p style="width: 100%;">{{ lang['-main-']['article-user-id'] }} - {{ articles[i.i][0].split(',')[0].replace("(", '') }}</p>
+                        <p style="width: 100%;">{{ lang['-main-']['article-date'] }} - {{ articles[i.i][0].split(',')[-3].replace("'", '') }}</p>
+                    </div>
+                    <br>
+                    {% set i.i = i.i + 1 %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <hr>
+        <h2>{{lang['-main-']['new']}}:</h2>
+        {% for row in rows_length %}
+            {% if loop.index == 1 %}
+                {% for row_element in range(row) %}
+                    <div class="articles_div" style="height: 200px;">
+                        <h3><a href="articles/{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[0] }}">{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[2].replace("'", '') }}</a></h3>
+                        <p style="width: 100%;">{{ lang['-main-']['article-user-id'] }} - {{ articles[i.i][0].split(',')[0].replace("(", '') }}</p>
+                        <p style="width: 100%;">{{ lang['-main-']['article-date'] }} - {{ articles[i.i][0].split(',')[-3].replace("'", '') }}</p>
+                    </div>
+                    <br>
+                    {% set i.i = i.i + 1 %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <hr>
+        <h2>{{lang['-main-']['popular']}}:</h2>
+        {% for row in rows_length %}
+            {% if loop.index == 1 %}
+                {% for row_element in range(row) %}
+                    <div class="articles_div" style="height: 200px;">
+                        <h3><a href="articles/{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[0] }}">{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[2].replace("'", '') }}</a></h3>
+                        <p style="width: 100%;">{{ lang['-main-']['article-user-id'] }} - {{ articles[i.i][0].split(',')[0].replace("(", '') }}</p>
+                        <p style="width: 100%;">{{ lang['-main-']['article-date'] }} - {{ articles[i.i][0].split(',')[-3].replace("'", '') }}</p>
+                    </div>
+                    <br>
+                    {% set i.i = i.i + 1 %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <hr>
+        <h2>{{lang['-main-']['recommended']}}:</h2>
+        {% for row in rows_length %}
+            {% if loop.index == 1 %}
+                {% for row_element in range(row) %}
+                    <div class="articles_div" style="height: 200px;">
+                        <h3><a href="articles/{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[0] }}">{{ articles[i.i][0].replace('(', '').replace(')', '').split(',')[2].replace("'", '') }}</a></h3>
+                        <p style="width: 100%;">{{ lang['-main-']['article-user-id'] }} - {{ articles[i.i][0].split(',')[0].replace("(", '') }}</p>
+                        <p style="width: 100%;">{{ lang['-main-']['article-date'] }} - {{ articles[i.i][0].split(',')[-3].replace("'", '') }}</p>
+                    </div>
+                    <br>
+                    {% set i.i = i.i + 1 %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <p style="text-align: center;"><a href="/login">Войдите</a> или создайте <a href="/registration">новый аккаунт</a>, чтобы начать делиться своими и читать статьи других людей!</p>
+    {% endif %}
+    <br>
 {% endblock %}

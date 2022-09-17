@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>{{ lang['-article-create-']['article-creation'] }}</h2>
+    <form name="create_article" method="post" action="/articles/create">
+        <p>{{ lang['-article-create-']['article-intro'] }}:</p>
+        <input type="text" size="40" maxlength="40" required name="intro">
+        <p>{{ lang['-article-create-']['article-text'] }}:</p>
+        <textarea required name="text" maxlength="1000" cols="200" rows="5" wrap="hard"></textarea>
+
+        <p><input class="button" type="submit" value="{{ lang['-article-create-']['article-creation-accept'] }}"></p>
+    </form>
+{% endblock %}

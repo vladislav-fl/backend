@@ -1,0 +1,13 @@
+{% extends 'admin.index.html' %}
+
+{% block content %}
+    <p>Вход в аккаунт админа:</p>
+    <form name="admin_login" method="post" action="/admin">
+        <p>Логин:</p>
+        <input type="text" size="40" maxlength="15" required name="login">
+        <p>Пароль:</p>
+        <input type="password" size="40" maxlength="20" required name="password">
+
+        <p><input type="submit" value="Войти"></p>
+    </form>
+{% endblock %}

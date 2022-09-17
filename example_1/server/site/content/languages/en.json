@@ -1,0 +1,83 @@
+{
+    "-site-interface-": {
+        "header": {
+            "main": "Main",
+            "cabinet": "Cabinet",
+            "articles": "Articles",
+            "exit": "Exit",
+            "registration": "Registration",
+            "login": "Log In",
+            "chat": "Chat"
+        },
+        "footer": {
+            "link": "Follow my <link> to get more information"
+        }
+    },
+    "-chat-": {
+        "chat-message": "Write message here...",
+        "chat-message-send": "Send"
+    },
+    "-main-": {
+        "important": "Important",
+        "new": "New",
+        "popular": "Popular",
+        "recommended": "Recommended",
+        "not-logged": "",
+        "article-user-id": "User ID",
+        "article-date": "Published date"
+    },
+    "-cabinet-": {
+        "cabinet": "Cabinet",
+        "background-color": "Background color",
+        "background-color-white": "White",
+        "background-color-black": "Black",
+        "background-color-yellow": "Yellow",
+        "background-color-accept": "Accept",
+        "language": "Language",
+        "language-accept": "Accept"
+    },
+    "-articles-": {
+        "articles": "Articles",
+        "create-article": "Create article",
+        "article-liked": "Likes",
+        "article-disliked": "Dislikes",
+        "article-user-id": "User ID",
+        "article-date": "Date"
+    },
+    "-article-": {
+        "article-delete": "Delete article",
+        "article": "Article",
+        "article-user-id": "User with ID",
+        "article-date": "published article",
+        "article-liked": "Likes",
+        "article-disliked": "Dislikes",
+        "article-set-like": "Like",
+        "article-set-dislike": "Dislike",
+        "article-cancel-like": "Cancel",
+        "article-leave-comment": "Leave comment",
+        "article-leave-comment-accept": "Send",
+        "article-no-comments": "There is no comments yet... Be the first one who would do it!",
+        "article-comment": "Comment",
+        "article-comment-user-id": "From user with ID",
+        "article-comment-delete": "Delete"
+    },
+    "-article-create-": {
+        "article-creation": "Article creation",
+        "article-intro": "Intro",
+        "article-text": "Text",
+        "article-creation-accept": "Create"
+    },
+    "-registration-": {
+        "registration": "Registration",
+        "login": "Login",
+        "password": "Password",
+        "password-repeat": "Repeat password",
+        "registration-accept": "Accept"
+    },
+    "-login-": {
+        "enter": "Log In",
+        "login": "Login",
+        "password": "Password",
+        "login-accept": "Accept"
+    }
+}
